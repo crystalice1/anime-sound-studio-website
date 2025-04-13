@@ -9,7 +9,8 @@ const servicesData = [
     icon: <Mic2 className="w-6 h-6 text-anime-green" />,
     color: "bg-anime-green/10",
     borderColor: "border-anime-green",
-    image: "/placeholder.svg"
+    description: "Профессиональная озвучка аниме-персонажей для любых проектов",
+    image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1470&auto=format&fit=crop"
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ const servicesData = [
     icon: <Music className="w-6 h-6 text-anime-pink" />,
     color: "bg-anime-pink/10",
     borderColor: "border-anime-pink",
-    image: "/placeholder.svg"
+    description: "Создание уникальных мелодий и композиций под проект любой сложности",
+    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1470&auto=format&fit=crop"
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ const servicesData = [
     icon: <Zap className="w-6 h-6 text-anime-blue" />,
     color: "bg-anime-blue/10",
     borderColor: "border-anime-blue",
-    image: "/placeholder.svg"
+    description: "Разработка уникальных звуковых эффектов для создания правильной атмосферы",
+    image: "https://images.unsplash.com/photo-1510279911118-fa071c6a9562?q=80&w=1470&auto=format&fit=crop"
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ const servicesData = [
     icon: <Headphones className="w-6 h-6 text-anime-yellow" />,
     color: "bg-anime-yellow/10",
     borderColor: "border-anime-yellow",
-    image: "/placeholder.svg"
+    description: "Финальная обработка звука для получения идеального результата",
+    image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1470&auto=format&fit=crop"
   }
 ];
 
@@ -49,12 +53,16 @@ const ServicesGrid = () => {
           </p>
         </div>
         <div className="mt-4 md:mt-0 flex gap-2">
-          <Button variant="ghost" size="icon">
-            ◀
-          </Button>
-          <Button variant="ghost" size="icon">
-            ▶
-          </Button>
+          {['1', '2', '3', '4'].map((num, index) => (
+            <Button 
+              key={num}
+              variant={index === 0 ? "default" : "outline"} 
+              size="icon"
+              className={`w-10 h-10 rounded-full ${index === 0 ? 'bg-anime-purple text-white' : 'text-muted-foreground hover:text-anime-purple hover:border-anime-purple'}`}
+            >
+              {num}
+            </Button>
+          ))}
         </div>
       </div>
 
@@ -72,17 +80,20 @@ const ServicesGrid = () => {
                   className="w-full h-full object-cover"
                 />
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
                   <div className="absolute top-4 left-4">
-                    <div className={`${service.color} p-2 rounded-full`}>
+                    <div className={`${service.color} p-2 rounded-full backdrop-blur-sm border border-white/10`}>
                       {service.icon}
                     </div>
                   </div>
                   
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-xl font-semibold text-white mb-1">{service.title}</h3>
-                    <Button variant="ghost" className="text-white/80 p-0 hover:text-white">
-                      Подробнее →
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+                    <p className="text-white/70 text-sm mb-3 line-clamp-2">
+                      {service.description}
+                    </p>
+                    <Button variant="ghost" className="text-white/80 p-0 hover:text-white group">
+                      Подробнее <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
                     </Button>
                   </div>
                 </div>
