@@ -54,7 +54,7 @@ const StudioFeatures = () => {
             icon={<Shield className="w-8 h-8 text-anime-purple" />}
             title="Конфиденциальность"
             description="Гарантия безопасности и сохранности ваших проектов"
-            image="https://images.unsplash.com/photo-1563453392212-326f5e854473?q=80&w=1470&auto=format&fit=crop"
+            image="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?q=80&w=1470&auto=format&fit=crop"
           />
         </div>
       </div>
