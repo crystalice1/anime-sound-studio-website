@@ -53,16 +53,12 @@ const ServicesGrid = () => {
           </p>
         </div>
         <div className="mt-4 md:mt-0 flex gap-2">
-          {['1', '2', '3', '4'].map((num, index) => (
-            <Button 
-              key={num}
-              variant={index === 0 ? "default" : "outline"} 
-              size="icon"
-              className={`w-10 h-10 rounded-full ${index === 0 ? 'bg-anime-purple text-white' : 'text-muted-foreground hover:text-anime-purple hover:border-anime-purple'}`}
-            >
-              {num}
-            </Button>
-          ))}
+          <Button variant="ghost" size="icon">
+            ◀
+          </Button>
+          <Button variant="ghost" size="icon">
+            ▶
+          </Button>
         </div>
       </div>
 

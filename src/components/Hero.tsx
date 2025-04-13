@@ -7,15 +7,17 @@ const Hero = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Левая колонка - текст */}
         <div className="max-w-xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
             <span className="relative z-10 inline-block">
-              <span className="relative z-10 bg-gradient-to-r from-anime-purple to-anime-pink text-transparent bg-clip-text font-extrabold drop-shadow-sm">
+              <span className="bg-gradient-to-r from-anime-purple via-anime-pink to-anime-purple text-transparent bg-clip-text font-extrabold">
                 Студия озвучивания аниме
               </span>
               <span className="absolute -bottom-1 left-0 right-0 h-3 bg-anime-green/20 -z-10 transform -skew-x-12"></span>
             </span>
             <br />
-            <span className="mt-2 inline-block">где рождаются эмоции</span>
+            <span className="mt-2 inline-block bg-gradient-to-r from-anime-purple/90 to-anime-pink/90 text-transparent bg-clip-text">
+              где рождаются эмоции
+            </span>
           </h1>
           
           <p className="text-lg text-muted-foreground mb-8">
@@ -23,7 +25,7 @@ const Hero = () => {
             Качество каждой ноты и каждого слова создаёт тот самый эмоциональный отклик.
           </p>
           
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col gap-4 items-start">
             <Button className="bg-anime-purple hover:bg-anime-purple/90 text-white rounded-full px-6 py-5 text-lg">
               Услышать примеры <Play className="ml-2 w-4 h-4" />
             </Button>
