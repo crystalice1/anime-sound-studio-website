@@ -8,14 +8,16 @@ const Hero = () => {
         {/* Левая колонка - текст */}
         <div className="max-w-xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            <span className="relative z-10 inline-block">
-              <span className="bg-gradient-to-r from-anime-purple via-anime-pink to-anime-purple text-transparent bg-clip-text font-extrabold">
-                Студия озвучивания аниме
-              </span>
-              <span className="absolute -bottom-1 left-0 right-0 h-3 bg-anime-green/20 -z-10 transform -skew-x-12"></span>
+            <span className="block mb-2 text-[#8A2BE2] bg-clip-text" style={{
+              background: 'linear-gradient(90deg, #8A2BE2, #FF1493, #8A2BE2)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundSize: '200% auto',
+              animation: 'gradient 3s linear infinite'
+            }}>
+              Студия озвучивания аниме
             </span>
-            <br />
-            <span className="mt-2 inline-block bg-gradient-to-r from-anime-purple/90 to-anime-pink/90 text-transparent bg-clip-text">
+            <span className="block mt-2 text-foreground">
               где рождаются эмоции
             </span>
           </h1>
@@ -26,7 +28,7 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col gap-4 items-start">
-            <Button className="bg-anime-purple hover:bg-anime-purple/90 text-white rounded-full px-6 py-5 text-lg">
+            <Button className="bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white rounded-full px-6 py-5 text-lg">
               Услышать примеры <Play className="ml-2 w-4 h-4" />
             </Button>
             <Button 
@@ -41,13 +43,13 @@ const Hero = () => {
           <div className="flex items-center mt-8">
             <div className="flex -space-x-2 mr-4">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className={`w-8 h-8 rounded-full bg-anime-${['purple', 'pink', 'green', 'blue'][i-1]} border-2 border-background flex items-center justify-center text-white font-bold text-xs`}>
+                <div key={i} className={`w-8 h-8 rounded-full bg-[${['#8A2BE2', '#FF1493', '#4CAF50', '#2196F3'][i-1]}] border-2 border-background flex items-center justify-center text-white font-bold text-xs`}>
                   {i}
                 </div>
               ))}
             </div>
-            <div className="text-sm text-muted-foreground font-medium border-l-2 border-anime-purple/30 pl-4">
-              <span className="font-bold text-anime-purple">200+</span> успешных проектов
+            <div className="text-sm text-muted-foreground font-medium border-l-2 border-[#8A2BE2]/30 pl-4">
+              <span className="font-bold text-[#8A2BE2]">200+</span> успешных проектов
             </div>
           </div>
         </div>
@@ -60,21 +62,21 @@ const Hero = () => {
               alt="Аниме звукозапись" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-anime-purple/60 to-transparent mix-blend-overlay"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#8A2BE2]/60 to-transparent mix-blend-overlay"></div>
             
             {/* Декоративный микрофон */}
             <div className="absolute bottom-8 right-8 bg-white p-3 rounded-full shadow-lg">
-              <Mic2 className="w-6 h-6 text-anime-purple" />
+              <Mic2 className="w-6 h-6 text-[#8A2BE2]" />
             </div>
           </div>
           
           {/* Социальные медиа индикаторы */}
           <div className="absolute bottom-4 left-4 flex gap-2">
             {[
-              { icon: '🎵', color: 'bg-anime-purple' },
-              { icon: '🎬', color: 'bg-anime-pink' },
-              { icon: '🎧', color: 'bg-anime-green' },
-              { icon: '🎤', color: 'bg-anime-blue' }
+              { icon: '🎵', color: 'bg-[#8A2BE2]' },
+              { icon: '🎬', color: 'bg-[#FF1493]' },
+              { icon: '🎧', color: 'bg-[#4CAF50]' },
+              { icon: '🎤', color: 'bg-[#2196F3]' }
             ].map((item, i) => (
               <div 
                 key={i} 
