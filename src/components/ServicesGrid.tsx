@@ -30,7 +30,7 @@ const servicesData = [
   {
     id: 4,
     title: "Аудиомастеринг",
-    icon: "🎬",
+    icon: "🎚️",
     color: "bg-[#2196F3]",
     description: "Финальная обработка звука для получения идеального результата",
     image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1470&auto=format&fit=crop"
