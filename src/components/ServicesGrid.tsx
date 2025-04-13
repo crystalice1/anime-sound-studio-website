@@ -1,4 +1,4 @@
-import { Mic2, Music, Headphones, Waveform } from "lucide-react";
+import { Mic2, Music, Headphones, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -22,7 +22,7 @@ const servicesData = [
   {
     id: 3,
     title: "Звуковые эффекты",
-    icon: <Waveform className="w-6 h-6 text-anime-blue" />,
+    icon: <Zap className="w-6 h-6 text-anime-blue" />,
     color: "bg-anime-blue/10",
     borderColor: "border-anime-blue",
     image: "/placeholder.svg"
