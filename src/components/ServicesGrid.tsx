@@ -75,7 +75,7 @@ const ServicesGrid = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
                   {/* Иконка в стиле яркого кружка с эмодзи */}
                   <div className="absolute top-4 left-4">
-                    <div className={`${service.color} w-12 h-12 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:scale-110 transition duration-300 text-2xl`}>
+                    <div className={`${service.color} w-10 h-10 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:scale-110 transition duration-300 text-lg`}>
                       {service.icon}
                     </div>
                   </div>
