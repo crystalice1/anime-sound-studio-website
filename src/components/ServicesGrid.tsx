@@ -25,7 +25,7 @@ const servicesData = [
     icon: "🎧",
     color: "bg-[#4CAF50]",
     description: "Разработка уникальных звуковых эффектов для создания правильной атмосферы",
-    image: "https://images.unsplash.com/photo-1510279911118-fa071c6a9562?q=80&w=1470&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1563330232-57114bb0823c?q=80&w=1470&auto=format&fit=crop"
   },
   {
     id: 4,
