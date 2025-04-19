@@ -2,6 +2,17 @@ import { Button } from '@/components/ui/button';
 import { Mic2, Play, Music, Phone } from 'lucide-react';
 
 const Hero = () => {
+  // Массив с URL изображений для аватаров
+  const avatars = [
+    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=988&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1470&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=987&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=987&auto=format&fit=crop"
+  ];
+
+  // Фоновые цвета для аватаров
+  const avatarColors = ['#8A2BE2', '#FF1493', '#4CAF50', '#2196F3'];
+
   return (
     <div className="relative pt-10 pb-16 px-4 md:px-8 lg:px-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -42,9 +53,20 @@ const Hero = () => {
           
           <div className="flex items-center mt-8">
             <div className="flex -space-x-2 mr-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className={`w-8 h-8 rounded-full bg-[${['#8A2BE2', '#FF1493', '#4CAF50', '#2196F3'][i-1]}] border-2 border-background flex items-center justify-center text-white font-bold text-xs`}>
-                  {i}
+              {avatars.map((avatar, i) => (
+                <div 
+                  key={i} 
+                  className="w-10 h-10 rounded-full border-2 border-background overflow-hidden"
+                  style={{ 
+                    borderColor: avatarColors[i],
+                    boxShadow: `0 0 0 2px ${avatarColors[i]}20` 
+                  }}
+                >
+                  <img 
+                    src={avatar} 
+                    alt="Команда" 
+                    className="w-full h-full object-cover" 
+                  />
                 </div>
               ))}
             </div>
