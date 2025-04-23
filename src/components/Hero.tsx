@@ -19,17 +19,14 @@ const Hero = () => {
         {/* Левая колонка - текст */}
         <div className="max-w-xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            <span className="block mb-2 text-[#8A2BE2] bg-clip-text" style={{
+            <span className="block text-[#8A2BE2] bg-clip-text" style={{
               background: 'linear-gradient(90deg, #8A2BE2, #FF1493, #8A2BE2)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundSize: '200% auto',
               animation: 'gradient 3s linear infinite'
             }}>
-              Студия озвучивания аниме
-            </span>
-            <span className="block mt-2 text-foreground">
-              где рождаются эмоции
+              Студия озвучивания аниме, где рождаются эмоции
             </span>
           </h1>
           
