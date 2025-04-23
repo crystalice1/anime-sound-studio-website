@@ -48,17 +48,56 @@ const StudioFeatures = () => {
     <section className="py-16 px-4 md:px-8 bg-muted rounded-3xl my-12 mx-4 md:mx-8">
       <div className="max-w-7xl mx-auto">
         <div className="relative mb-16">
-          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#8A2BE2] rounded-full flex items-center justify-center overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=988&auto=format&fit=crop" 
-              alt="Team member" 
-              className="w-full h-full object-cover"
-            />
+          {/* Аниме-стилизованный элемент вместо круга */}
+          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-24 h-24">
+            <div className="relative">
+              {/* Звуковая волна в стиле аниме */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 bg-gradient-to-r from-[#8A2BE2] to-[#FF1493] rounded-full p-1 animate-pulse">
+                  <div className="w-full h-full bg-background rounded-full flex items-center justify-center overflow-hidden">
+                    {/* Chibi аниме-персонаж с наушниками */}
+                    <div className="w-16 h-16 relative">
+                      <img 
+                        src="/logo-b.svg" 
+                        alt="Аниме персонаж" 
+                        className="w-full h-full object-contain animate-bounce" 
+                        style={{ animationDuration: '3s' }}
+                      />
+                    </div>
+                  </div>
+                </div>
+                {/* Звуковые волны */}
+                {[1, 2, 3].map((i) => (
+                  <div 
+                    key={i} 
+                    className="absolute w-full h-full rounded-full border-2 border-[#8A2BE2] opacity-0"
+                    style={{
+                      animation: `ripple 1.5s linear infinite ${i * 0.5}s`,
+                    }}
+                  ></div>
+                ))}
+              </div>
+            </div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-center pt-8">
+          
+          <h2 className="text-3xl md:text-4xl font-bold text-center pt-12">
             У НАС ЕСТЬ ВСЁ, ЧТО НУЖНО ДЛЯ<br />
             <span className="text-[#8A2BE2]">ИДЕАЛЬНОГО ЗВУЧАНИЯ</span>
           </h2>
+
+          {/* CSS для анимации звуковых волн */}
+          <style jsx>{`
+            @keyframes ripple {
+              0% {
+                transform: scale(0.8);
+                opacity: 0.8;
+              }
+              100% {
+                transform: scale(1.5);
+                opacity: 0;
+              }
+            }
+          `}</style>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
