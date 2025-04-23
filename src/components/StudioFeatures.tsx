@@ -86,7 +86,7 @@ const StudioFeatures = () => {
           </h2>
 
           {/* CSS для анимации звуковых волн */}
-          <style jsx>{`
+          <style dangerouslySetInnerHTML={{ __html: `
             @keyframes ripple {
               0% {
                 transform: scale(0.8);
@@ -97,7 +97,7 @@ const StudioFeatures = () => {
                 opacity: 0;
               }
             }
-          `}</style>
+          `}} />
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
