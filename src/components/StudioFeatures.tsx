@@ -49,30 +49,33 @@ const StudioFeatures = () => {
       <div className="max-w-7xl mx-auto">
         <div className="relative mb-16">
           {/* Аниме-стилизованный элемент вместо круга */}
-          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-24 h-24">
+          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-32 h-32">
             <div className="relative">
-              {/* Звуковая волна в стиле аниме */}
+              {/* Фон с градиентом в стиле аниме */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-[#8A2BE2] to-[#FF1493] rounded-full p-1 animate-pulse">
-                  <div className="w-full h-full bg-background rounded-full flex items-center justify-center overflow-hidden">
-                    {/* Chibi аниме-персонаж с наушниками */}
-                    <div className="w-16 h-16 relative">
+                <div className="w-28 h-28 bg-gradient-to-r from-[#F8BBD0] to-[#F48FB1] rounded-full p-1 animate-pulse shadow-lg">
+                  <div className="w-full h-full bg-white rounded-full flex items-center justify-center overflow-hidden">
+                    {/* Аниме-персонаж */}
+                    <div className="w-24 h-24 relative flex items-center justify-center">
                       <img 
-                        src="/logo-b.svg" 
-                        alt="Аниме персонаж" 
-                        className="w-full h-full object-contain animate-bounce" 
-                        style={{ animationDuration: '3s' }}
+                        src="https://cdn.poehali.dev/files/efb41646-71e3-46c6-959f-0416de85fb67.png" 
+                        alt="Милый аниме-персонаж" 
+                        className="w-full h-full object-contain"
                       />
                     </div>
                   </div>
                 </div>
-                {/* Звуковые волны */}
+                {/* Декоративные сердечки вокруг */}
                 {[1, 2, 3].map((i) => (
                   <div 
                     key={i} 
-                    className="absolute w-full h-full rounded-full border-2 border-[#8A2BE2] opacity-0"
+                    className="absolute w-4 h-4 opacity-70"
                     style={{
-                      animation: `ripple 1.5s linear infinite ${i * 0.5}s`,
+                      backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F48FB1'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E\")",
+                      backgroundSize: 'contain',
+                      left: `${45 + Math.sin(i * 2) * 40}%`,
+                      top: `${45 + Math.cos(i * 2) * 40}%`,
+                      animation: `float${i} ${2 + i * 0.5}s ease-in-out infinite alternate`,
                     }}
                   ></div>
                 ))}
@@ -80,22 +83,24 @@ const StudioFeatures = () => {
             </div>
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-center pt-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center pt-20">
             У НАС ЕСТЬ ВСЁ, ЧТО НУЖНО ДЛЯ<br />
             <span className="text-[#8A2BE2]">ИДЕАЛЬНОГО ЗВУЧАНИЯ</span>
           </h2>
 
-          {/* CSS для анимации звуковых волн */}
+          {/* CSS для анимации элементов */}
           <style dangerouslySetInnerHTML={{ __html: `
-            @keyframes ripple {
-              0% {
-                transform: scale(0.8);
-                opacity: 0.8;
-              }
-              100% {
-                transform: scale(1.5);
-                opacity: 0;
-              }
+            @keyframes float1 {
+              0% { transform: translate(0, 0) rotate(0deg); }
+              100% { transform: translate(5px, -5px) rotate(5deg); }
+            }
+            @keyframes float2 {
+              0% { transform: translate(0, 0) rotate(0deg); }
+              100% { transform: translate(-7px, -3px) rotate(-5deg); }
+            }
+            @keyframes float3 {
+              0% { transform: translate(0, 0) rotate(0deg); }
+              100% { transform: translate(3px, 7px) rotate(3deg); }
             }
           `}} />
         </div>
